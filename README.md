@@ -2,8 +2,8 @@
 
 Example project allowing a ring application to run stand-alone in a specific context that matches
 the default context the uberwar will run in when tossed into a Java servlet container.  This project
-realizes the mutli-route technique described on http://stackoverflow.com/questions/33135667/can-i-make-lein-ring-server-headless-run-on-a-specific-servlet-context
-by user http://stackoverflow.com/users/1860180/ez121sl
+realizes the mutli-route technique described on <a href="http://stackoverflow.com/questions/33135667/can-i-make-lein-ring-server-headless-run-on-a-specific-servlet-context">
+Can I make lein ring server-headless run on a specific servlet context?</a> by user <a href="http://stackoverflow.com/users/1860180/ez121sl">ez121sl</a>.
 
 ## Usage
 
