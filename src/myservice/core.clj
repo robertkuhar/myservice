@@ -5,6 +5,14 @@
             [ring.middleware.params :refer :all]
             [clojure.tools.logging :as log]))
 
+(defn init!
+  []
+  (log/info "init!"))
+
+(defn destroy!
+  []
+  (log/info "destroy!"))
+
 (defn echo [req]
   (let [results (map
                   (fn [x] { x ((:query-params req) x)})
@@ -18,13 +26,25 @@
                              (echo req)))
            (GET "/events/:field_id"
                 [field_id :as request]
-             (str field_id))
+             (format
+               "field_id: %s query_params: %s"
+               field_id
+               (apply str (echo request))))
            (GET "/events/:field_id/:layer"
                 [field_id layer :as request]
-             (str field_id " " layer))
+             (format
+               "field_id: %s, layer: %s, query_params: %s"
+               field_id
+               layer
+               (apply str (echo request))))
            (GET "/events/:field_id/:layer/:event_date"
                 [field_id layer event_date :as request]
-             (str field_id " " layer " " event_date))
+             (format
+               "field_id: %s, layer: %s, event_date: %s, query_params: %s"
+               field_id
+               layer
+               event_date
+               (apply str (echo request))))
            (route/not-found "Not Found"))
 
 (defroutes standalone-routes

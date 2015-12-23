@@ -14,8 +14,9 @@
 
   :plugins [[lein-ring "0.9.7"]]
 
-  :ring {:handler myservice.core/standalone-app
-         :port 3000}
-  :profiles {
-             :uberjar {:ring {:handler myservice.core/app}}}
-  )
+  :ring {:port 3000
+         :handler myservice.core/standalone-app
+         :init myservice.core/init!
+         :destroy myservice.core/destroy!}
+
+  :profiles { :uberjar {:ring {:handler myservice.core/app}}})
