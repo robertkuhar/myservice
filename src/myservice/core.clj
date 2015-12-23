@@ -7,12 +7,10 @@
 
 (defn init!
   []
-  (println "println init!")
   (log/info "init!"))
 
 (defn destroy!
   []
-  (println "println destroy!")
   (log/info "destroy!"))
 
 (defn echo [req]
