@@ -10,6 +10,7 @@
                  [compojure "1.4.0"]
                  [ring/ring-defaults "0.1.5"]
                  [org.clojure/tools.logging "0.3.1"]
+                 [ch.qos.logback/logback-classic "1.1.3"]
                  [clj-http "2.0.0"]]
 
   :plugins [[lein-ring "0.9.7"]]
