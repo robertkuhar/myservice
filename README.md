@@ -7,21 +7,29 @@ Can I make lein ring server-headless run on a specific servlet context?</a> by u
 
 ## Usage
 
-To produce an uberwar that binds to the context /myservice
+To produce the myservice uberwar:
 
 ```
 $ lein ring uberwar myservice.war
 ```
 
-To run stand-alone through ```lein ring``` an bind to the context /myservice
+To run stand-alone through ```lein ring```:
 
 ```
 $ lein ring server-headless
 ```
 
+Curl it at:
+
+```
+$ curl -i -X GET http://localhost:3000/myservice/healthz
+HTTP/1.1 200 OK
+Date: Wed, 02 Mar 2016 20:47:50 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 3
+Server: Jetty(9.2.10.v20150310)
+```
+
 ## License
 
 Copyright © 2015
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
