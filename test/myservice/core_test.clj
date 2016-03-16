@@ -38,4 +38,6 @@
           (let [pattern (re-pattern x)]
             (is (not (nil? (re-find pattern (:body response)))))))))
 
-    (.stop server)))
+    (do
+      (Thread/sleep 100)
+      (.stop server))))

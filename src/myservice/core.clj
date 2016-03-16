@@ -66,12 +66,8 @@
            (POST "/file"
                  {params :params}
              (log/infof "params: %s" params)
-             (log/infof "field_id: %s" (get params :field_id))
-             (log/infof "layer: %s" (get params :layer))
-             (log/infof "event_date: %s" (get params :event_date))
              (log/infof "meta: %s" (get params :meta))
              (log/infof "file: %s" (get params :file))
-             (log/infof "preview: %s" (get params :preview))
              "OK")
            (route/not-found "Not Found"))
 
