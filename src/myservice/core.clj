@@ -55,6 +55,7 @@
            ;; Multipart experiments
            (POST "/events/:field_id/:layer/:event_date"
                  [field_id layer event_date meta file preview :as request]
+             (log/infof "request: %s" request)
              (log/infof "params: %s" (get request :params))
              (log/infof "field_id: %s" field_id)
              (log/infof "layer: %s" layer)
